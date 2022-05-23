@@ -1,0 +1,33 @@
+<div class="container">
+	<table class="table table-borderless">
+		<tr>
+			<td class="lblclass">Quote ID</td>
+			<td class="dtaclass">{{quote.Quote_Id}}</td>
+		</tr>
+		<tr>
+			<td class="lblclass">Quote Type</td>
+			<td class="dtaclass" >{{quote.Quote_Type}}</td>
+		</tr>
+		<tr>
+			<td class="lblclass">Contact</td>
+			<td  class="dtaclass">{{quote.Contact}}</td>
+		</tr>
+
+		<tr>
+			<td   class="lblclass">Description</td>
+			<td  class="dtaclass">{{quote.Task_Description}}</td>
+		</tr>
+
+		<tr>
+			<td class="lblclass">Due Date</td>
+			<td  class="dtaclass">{{quote.Due_Date}}</td>
+		</tr>
+
+		<tr>
+			<td class="lblclass">Task_Type</td>
+			<td class="dtaclass">{{quote.Task_Type}}</td>
+		</tr>
+	  </table>
+
+	  <button style="background-color: #673ab7; color: white;" mat-button (click)="return()">Return</button>
+  </div>

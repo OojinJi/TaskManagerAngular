@@ -1,0 +1,84 @@
+<form [formGroup] = "dialog_form" (ngSubmit) = "SubmitForm()">
+
+	<div>
+
+		<h2 style="background: #3f51b5 ;color: white;">mat-dialog-title>{{title}}</h2>
+
+		<mat-dialog-content class="mat-typography">
+
+			<div style="width: 70vw;">
+
+				<div class="row">
+					<div class="col-4 formLableClass">Quote ID</div>
+					<div class="col-8 formControlClass"> <input readonly style="background-color: gainsboro;"
+						formControlName="Quote_Id" type="text">
+					</div>
+				</div>
+
+				<div class="row">
+                    <div class="col-4 formLabelClass">Quote Type</div>
+                    <div class="col-8 formControlClass">
+                        <input formControlName="Quote_Type" type="text">
+                        <span class="errorClass" *ngIf="Quote_Type.invalid && (Quote_Type.dirty || Quote_Type.touched)">
+							*Required
+						</span>	
+                    </div>
+				</div>
+
+				<div class="row">
+                    <div class="col-4 formLabelClass">Contact</div>
+                    <div class="col-8 formControlClass">
+                        <input formControlName="Contact" type="text">
+                        <span class="errorClass" *ngIf="Contact.invalid && (Contact.dirty || Contact.touched)">
+                            *Required</span>
+                    </div>
+                </div>
+
+				<div class="row">
+                    <div class="col-4 formLabelClass">Task Type</div>
+                    <div class="col-8 formControlClass">
+                        <input type="text" formControlName="Task_Type">
+                        <span class="errorClass" *ngIf="Task_Type.invalid && (Task_Type.dirty || Task_Type.touched)">
+                            *Required</span>
+                	</div>
+				</div>		
+
+				<div class="row">
+					<div class="col-4 formLabeClass" style="margin-top: 5%;">Due Date</div>
+					<div class="col-8">
+						<table table = "width: auto;">
+							<tr>
+								<td>
+									<mat-form-field id="date-form-field">
+										<mat-label></mat-label>
+										<input style="width: 100%;" matInput [matDatepicker]="picker"
+											formControlName="Due_Date" (dateInput)="addEvent('input', $event)">
+										<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>	
+										<mat-datepicker #picker></mat-datepicker>
+									</mat-form-field>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+                    <div class="col-4 formLabelClass">Task Description</div>
+                    <div class="col-8">
+                        <textarea style="width: 100;" formControlName="Task_Description"></textarea>
+                        <span class="errorClass" *ngIf="Task_Description.invalid && (Task_Description.dirty || Task_Description.touched)">
+                            *Required</span>
+                	</div>
+				</div>	
+			</div>
+
+		</mat-dialog-content>
+
+		<mat-dialog-actions align="end">
+			<button mat-button mat-dialog-close>Cancel</button>
+			<button type="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+		</mat-dialog-actions>
+
+	</div>
+	
+</form>

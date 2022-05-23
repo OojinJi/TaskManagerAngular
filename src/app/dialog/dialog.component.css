@@ -1,0 +1,18 @@
+.formLabelClass{
+	padding-right: 5%;
+	padding-left: 5%;
+	height: 50px;
+	vertical-align: middle;
+ }
+ .formControlClass{
+	 height: 50px;
+	 vertical-align: middle;
+}
+  
+form input {
+	  width: 50%;
+}
+ 
+.errorClass{
+	  color: red;
+}

@@ -1,0 +1,69 @@
+
+<div class="row" >
+        
+    <div class="col-6 offset-3">
+        <mat-card>
+            
+            <mat-card-content>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="cursor: pointer;" [ngClass]="loginbox?'activeClass':'inactiveClass'" (click)="switchtabs()"> <mat-card-title>Login</mat-card-title></td>
+                        <td style="cursor: pointer;"  [ngClass]="registerbox?'activeClass':'inactiveClass'" (click)="switchtabs()" ><mat-card-title >Register</mat-card-title></td>
+                    </tr>
+                </table>         
+                <ng-container *ngIf="loginbox; then login  else register "></ng-container>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<ng-template #login>
+    <form style="width: 100%;" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+        <div style="margin: 5px;">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="username" formControlName="userName" required>
+                <mat-error *ngIf="login_name?.invalid && (login_name?.dirty || login_name?.touched)">*Required</mat-error>
+            </mat-form-field>
+        </div>
+        <div style="margin: 5px;">
+            <mat-form-field >
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="password" formControlName="password" type="password" required>
+                <mat-error *ngIf="login_password?.invalid && (login_password?.dirty || login_password?.touched)">*Required</mat-error>
+            </mat-form-field>      
+        </div>
+        <button [disabled]="loginForm.invalid" mat-flat-button color="primary" type="submit" >LOGIN</button>
+      </form>
+</ng-template>
+
+
+<ng-template #register>
+    <form style="width: 100%;" [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+        <div style="margin: 5px;">
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="username" formControlName="username" required>
+                <mat-error *ngIf="register_name?.invalid && (register_name?.dirty || register_name?.touched)">*Required</mat-error>
+            </mat-form-field>
+        </div>
+        <div style="margin: 5px;">
+            <mat-form-field >
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="password" formControlName="password" type="password" required>
+                <mat-error *ngIf="registerForm.controls.password.invalid">*Required</mat-error>
+            </mat-form-field>
+        </div>
+        <div style="margin: 5px;">
+            <mat-form-field >
+                <mat-label> Confirm Password</mat-label>
+                <input matInput placeholder="password" formControlName="confirmpassword" type="password" required>
+                <mat-error *ngIf="f.confirmpassword.invalid && (f.confirmpassword.dirty || f.confirmpassword.touched) && f.confirmpassword.errors.required">*Required</mat-error>
+                <mat-error *ngIf=" f.confirmpassword.invalid && (f.confirmpassword.dirty || f.confirmpassword.touched) && f.confirmpassword.errors.confirmedValidator">*Password and Confirm Password must be match.</mat-error>
+           
+                 </mat-form-field>
+        </div>
+        <button [disabled]="registerForm.invalid" mat-flat-button color="primary" type="submit" >Register</button>  
+      </form>
+</ng-template>

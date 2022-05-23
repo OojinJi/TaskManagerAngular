@@ -1,0 +1,17 @@
+.lblclass {
+    color: #3f51b5;
+    font-weight: 500;
+}
+.dtaclass {
+    padding-left: 5%;
+}
+
+table{
+    padding-left: 25px;
+    padding-top: 25px;
+    font-size: large;
+}
+button{
+    margin-top: 5px;
+    margin-left: 25px;
+}

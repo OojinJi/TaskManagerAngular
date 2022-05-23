@@ -1,0 +1,60 @@
+table{
+	width: 100%;
+}
+
+#paginatorTable{
+    width: 100%;
+    text-align: right;
+
+}
+
+a{
+  cursor: pointer;
+}
+
+#paginatorTable tr td{
+	padding: 1%;
+}
+
+.paginatorTabActive{
+    border-radius: 0.25em;
+    border: 0.5px solid darkgray;
+    background-color: gainsboro;
+    padding: 1% 1% 1% 1%;
+	margin: 1% 1% 1% 1%;
+  	color: black;
+  	cursor: pointer;
+}
+
+.paginatorTab{
+  	padding: 1% 1% 1% 1%;
+  	margin: 1% 1% 1% 1%;
+  	color: black;
+  	cursor: pointer;
+ 
+}
+  
+#headerbox{
+ 	background-color: lightgrey;
+  	max-height: 25px;
+}
+
+#mainbox{
+ 	border: 1px solid lightgray;
+ 	width: 100%;
+}
+
+#mainbox h3{
+  	color: #3f51b5;
+ 	padding-left: 1%;
+  	width: 10%;
+  	display: inline-block;
+}
+
+#mainbox button{
+	float: right;
+   	height: 25px;
+   	background-color: rgb(16, 197, 158);
+   	color: white;
+   	border: none;
+}
